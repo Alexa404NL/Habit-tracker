@@ -1,0 +1,86 @@
+prompt --application/pages/page_00011
+begin
+--   Manifest
+--     PAGE: 00011
+--   Manifest End
+wwv_flow_imp.component_begin (
+ p_version_yyyy_mm_dd=>'2024.05.31'
+,p_release=>'24.1.3'
+,p_default_workspace_id=>38423973878489448962
+,p_default_application_id=>220901
+,p_default_id_offset=>0
+,p_default_owner=>'WKSP_MASCOTASMARAVILLAHACKMTY2024'
+);
+wwv_flow_imp_page.create_page(
+ p_id=>11
+,p_name=>'Check'
+,p_alias=>'CHECK'
+,p_page_mode=>'MODAL'
+,p_step_title=>'Check'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_page_component_map=>'02'
+);
+wwv_flow_imp_page.create_page_button(
+ p_id=>wwv_flow_imp.id(38941572252997091017)
+,p_button_sequence=>10
+,p_button_name=>'Check'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#:t-Button--iconLeft:t-Button--stretch:t-Button--gapLeft:t-Button--gapRight'
+,p_button_template_id=>wwv_flow_imp.id(38717897774134360347)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Check'
+,p_icon_css_classes=>'fa-check-circle'
+,p_grid_new_row=>'Y'
+,p_database_action=>'UPDATE'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(38941572754236091022)
+,p_name=>'COUNT'
+,p_item_sequence=>20
+,p_use_cache_before_default=>'NO'
+,p_item_default=>'1'
+,p_source=>'COUNT'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'Y'
+);
+wwv_flow_imp_page.create_page_item(
+ p_id=>wwv_flow_imp.id(38941572870847091023)
+,p_name=>'ID'
+,p_item_sequence=>30
+,p_use_cache_before_default=>'NO'
+,p_source=>'COUNT'
+,p_source_type=>'DB_COLUMN'
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'Y'
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(38941572343662091018)
+,p_process_sequence=>10
+,p_process_point=>'ON_SUBMIT_BEFORE_COMPUTATION'
+,p_process_type=>'NATIVE_FORM_PROCESS'
+,p_process_name=>'Check'
+,p_attribute_02=>'DONY_TRACKER'
+,p_attribute_03=>'COUNT'
+,p_attribute_04=>'ID'
+,p_attribute_11=>'I:U:D'
+,p_attribute_12=>'Y'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_process_when_button_id=>wwv_flow_imp.id(38941572252997091017)
+,p_internal_uid=>38941572343662091018
+);
+wwv_flow_imp_page.create_page_process(
+ p_id=>wwv_flow_imp.id(38941572945613091024)
+,p_process_sequence=>20
+,p_process_point=>'ON_SUBMIT_BEFORE_COMPUTATION'
+,p_process_type=>'NATIVE_CLOSE_WINDOW'
+,p_process_name=>'CLOSE'
+,p_attribute_02=>'Y'
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+,p_internal_uid=>38941572945613091024
+);
+wwv_flow_imp.component_end;
+end;
+/
